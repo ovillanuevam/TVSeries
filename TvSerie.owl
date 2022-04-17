@@ -1,0 +1,1556 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#"
+     xml:base="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie/1.0"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description: The ontology of a TV series (Big Bang Theory). Author: Oscar Villanueva</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TV Series Ontology (The Big Bang Theory)</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#compatibleWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#compatibleWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Two characters which are compatible with each other</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compatibleWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isLocationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionEpisode"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where a Show or episode takes place</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLocation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#FictionalCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Personality type from Enneagram  that a Character has</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPersonality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isLocationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionEpisode"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Building is a location of TV Shows</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isLocationOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isMemberOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#FictionalCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A character is member of a TV Show</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isMemberOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isPerformedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#performsIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The characters that a TV Series is performed by</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isPerformedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isWonBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isWonBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Award can be won by an actor or a TV Show</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isWonBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Apartment"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#House"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some characters live in Apartments</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">livesIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Which character lives with another character</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">livesWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#performsIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#performsIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An actor performs in a Television Show</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">performsIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#plays -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#plays">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An actor plays a character in a TV Show</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plays</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#worksAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#worksAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Laboratory"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Restaurant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Shop"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The characters work at Buildings</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">worksAt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The gender of the character</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gender</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasGender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The gender of the Person</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasGender</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tyoe of personality of the Enneagram</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#length -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#length">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionEpisode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the length or duration of the season</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#originalTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#originalTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Work"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The original title of the work</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">originalTitle</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#title">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title of the Award</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#year">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The year the award took place on</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Artist"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A person (and character) can be an Actor</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Agent">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agent is an entity that has an activity</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Apartment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Apartment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apartment as a location where the characters live</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apartment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Artist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Artist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artist as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Award won by a TV Serie or Person</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Award</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Awarded -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Awarded">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Oservation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">List of actors who have won awards</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Awarded</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Biologist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Biologist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Scientist"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biologist as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biologist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Building as the location where the TV series takes place on</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#ComicShop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#ComicShop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Shop"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comic Shop as a location</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComicShop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Designer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Designer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Artist"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A person (and character) can be a Designer</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Designer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Engineer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Engineer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engineer as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engineer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Eight"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Five"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Four"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Nine"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#One"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Seven"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Six"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Three"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Two"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#PersonalityType"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enneagram of nine personality types: One/The Reformer, Two/The Helper,:Three/The Achiever, Four/The Individualist, Five/The Investigator, Six/The Loyalist, Seven/The Enthusiast, Eight/The Challenger, Nine/The Peacemaker</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EnneagramTypes</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/page/Enneagram_of_Personality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#FictionalCharacter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#FictionalCharacter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fictional Character from a TV Serie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FictionalCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#House -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#House">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">House as a location where a characters lives</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">House</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Laboratory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Laboratory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laboratory as a location</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laboratory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Oservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Oservation">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oservation from an condition we want to study</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oservation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person involved in a Serie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person</rdfs:label>
+        <rdfs:samAs rdf:resource="https://dbpedia.org/page/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#PersonalityType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#PersonalityType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Oservation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Personality type of a Character</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PersonalityType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Physicist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Physicist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Scientist"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physicist as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physicist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restaurant as a location</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Scientist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Scientist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scientist as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scientist</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/page/Scientist"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Shop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Shop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shop as a location</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Storekeeper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Storekeeper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Storekeeper as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Storekeeper</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#FictionalCharacter"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characters from TV Shows or Comedies</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TelevisionCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionEpisode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionEpisode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Work"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A television episode is a part of serial television program</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TelevisionEpisode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionSeason -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionSeason">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Work"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The season from the TV Serie</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TelevisionSeason</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Work"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Television Show as a type of artistic work</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TelevisionShow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Waitress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Waitress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waitress as the Person&apos;s occupation</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waitress</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Work -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Work">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Work (usually artistic)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Amy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Amy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Biologist"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Five"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amy  is one of the supporting female character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Bernardette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Bernardette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Waitress"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Two"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#WolowitzHouse"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheCheesecakeFactory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bernardette is one of the supporting female character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bernardette</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Caltech -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Caltech">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Laboratory"/>
+        <isLocationOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">California Institute of Technology is where Sheldon, Leonard, Rajesh and Howard work.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caltech</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestActorComedy2011 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestActorComedy2011">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Critics&apos; Choice Television Awards: Best Actor in a Comedy Series 2011</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CriticsChoiceBestActorComedy2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestActorComedy2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestActorComedy2014">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Critics&apos; Choice Television Awards: Best Actor in a Comedy Series 2014</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CriticsChoiceBestActorComedy2014</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestSupportingActressComedy2013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestSupportingActressComedy2013">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#KaleyCuoco"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Critics&apos; Choice Television Awards: Best Supporting Actress in a Comedy Series 2013</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CriticsChoiceBestSupportingActressComedy2013</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestSupportingActressComedy2018 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#CriticsChoiceAwardsBestSupportingActressComedy2018">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#MayimBialik"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Critics&apos; Choice Television Awards: Best Supporting Actress in a Comedy Series 2018</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CriticsChoiceBestSupportingActressComedy2018</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Eight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Eight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Eight or The Challenger (also Protector) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheChallenger</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EmmyAwardLeadActorComedy2010 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EmmyAwardLeadActorComedy2010">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primetime Emmy Award for Outstanding Lead Actor in a Comedy Series 2010</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EmmyLeadActorComedy2010</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EmmyLeadActor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EmmyLeadActor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primetime Emmy Award for Outstanding Lead Actor in a Comedy Series 2011</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EmmyLeadActorComedy2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Five -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Five">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Five or The Investigator (also Observer) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheInvestigator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Four -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Four">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Four or The Individualist (also Romantic) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheIndividualist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Howard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Howard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Engineer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Four"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#WolowitzHouse"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Caltech"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Howard  is one of the supporting male character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Howard</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <performsIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <plays rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Sheldonn"/>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</hasGender>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jim Parsons is an actor and main character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JimParsons</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://es.dbpedia.org/page/Jim_Parsons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JohnnyGalecki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JohnnyGalecki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <performsIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <plays rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Leonard"/>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</hasGender>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Johnny Galeckiis an actor and supporting character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnnyGalecki</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#KaleyCuoco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#KaleyCuoco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <performsIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <plays rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Penny"/>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</hasGender>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kaley Cuoco is an actress and main character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KaleyCuoco</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Leonard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Leonard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Physicist"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Six"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#LosRoblesApartmentBuilding"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Caltech"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leonard is one of the supporting male character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leonard</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#LosRoblesApartmentBuilding -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#LosRoblesApartmentBuilding">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Apartment"/>
+        <isLocationOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los Robles Apartment Building is where Sheldon, Leonard and Penny live. Also where the main characters gathered to have dinner and chat.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LosRoblesApartmentBuilding</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#MayimBialik -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#MayimBialik">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+        <performsIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <plays rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Amy"/>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</hasGender>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mayim Bialik is an actress and supporting character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MayimBialik</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Nine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Nine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Nine or The Peacemaker (also Mediator) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThePeacemaker</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#One -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#One">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type One or The Perfectionist (also Reformer) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThePerfectionist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Penny -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Penny">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Waitress"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Three"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#LosRoblesApartmentBuilding"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheCheesecakeFactory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Penny is the main female character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Penny</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Rajesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Rajesh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Physicist"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Seven"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheRajMahal"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Caltech"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rajesh is one of the supporting male character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rajesh</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#SatelliteAwardsBestActressComedy2012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#SatelliteAwardsBestActressComedy2012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#KaleyCuoco"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Satellite Awards, Best Actress in a Series, Comedy or Musical, 2012</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SatelliteBestActressComedy2012</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Seven -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Seven">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Seven or The Enthusiast (also Epicure) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheEnthusiast</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Sheldonn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Sheldonn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Physicist"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#One"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#LosRoblesApartmentBuilding"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Caltech"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sheldon Cooper is the main male character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sheldon</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://es.dbpedia.org/page/Sheldon_Cooper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Six -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Six">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Six or The Loyalist (also Skeptic) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheLoyalist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Stuart -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Stuart">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Designer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+        <hasPersonality rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Nine"/>
+        <worksAt rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheComicCenter"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuart  is one of the supporting male character of The Big Bang Theory</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuart</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionShow"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Big Bang Theory is a comedy TV Serie created in 2007</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheBigBangTheory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheCheesecakeFactory -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheCheesecakeFactory">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Restaurant"/>
+        <isLocationOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Cheesecake Factory is the restaurant where Penny works</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheCheesecakeFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheComicCenter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheComicCenter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#ComicShop"/>
+        <isLocationOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Comic Center of Pasadena is where Stuart works and the main characters go to buy comics</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheComicCenter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheRajMahal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheRajMahal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Apartment"/>
+        <isLocationOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Raj Mahal is where Rajesh lives</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheRajMahal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Three -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Three">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Three or The Performer (also Achiever) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThePerformer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Two -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Two">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#EnneagramTypes"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasType>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type Two or The Helper (also Giver) in the Enneagram of personality</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TheHelper</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#WolowitzHouse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#WolowitzHouse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#House"/>
+        <isLocationOf rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TheBigBangTheory"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wolowitz House is where Howard lives</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WolowitzHouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Critics&apos;_Choice_Television_Awards:_Best_Supporting_Actress_in_a_Comedy_Series -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Critics&apos;_Choice_Television_Awards:_Best_Supporting_Actress_in_a_Comedy_Series">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#MayimBialik"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2016</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Critics&apos; Choice Television Awards: Best Supporting Actress in a Comedy Series 2016</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CriticsChoiceBestSupportingActressComedy2016</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Golden_Globe_Awards:_2011,_Best_Actor,Television_Series_Musical_or_Comedy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Golden_Globe_Awards:_2011,_Best_Actor,Television_Series_Musical_or_Comedy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JimParsons"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Golden Globe Awards 2011: Best Actor,Television Series Musical or Comedy</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoldenGlobeBestActorComedy2011</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Satellite_Awards:_Best_Actor_in_a_Series,_Comedy_or_Musical,_2012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Satellite_Awards:_Best_Actor_in_a_Series,_Comedy_or_Musical,_2012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+        <isWonBy rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#JohnnyGalecki"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</year>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Satellite Awards: Best Actor in a Series, Comedy or Musical, 2012</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SatelliteBestActorComedy2012</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Apartment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#House"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Laboratory"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Restaurant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Shop"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#c1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#c2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#t1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#t2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Award"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Actor"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#isWonBy"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#c"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Awarded"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#Building"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesIn"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesIn"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#livesWith"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#c2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#t1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#t2"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl:var#t1"/>
+                                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#compatibleWith"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#c2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#t2"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#t2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl:var#t1"/>
+                                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</swrl:argument2>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#compatibleWith"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#c2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#t1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasPersonality"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#TelevisionCharacter"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#c2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#t2"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#hasType"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl:var#t1"/>
+                                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</swrl:argument2>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/osukaru/ontologies/2022/3/tvserie#compatibleWith"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#c2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
